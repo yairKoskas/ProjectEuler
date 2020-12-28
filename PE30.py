@@ -1,11 +1,15 @@
+import time
+st = time.time()
 def digFifthPow(n):
+    n = str(n)
+    length = len(n)
     sum = 0
-    for i in range(len(str(n))):
-        sum += int(str(n)[i])**5
+    for i in range(length):
+        sum += int(n[i])**5
     return sum
-l = []
-for i in range(pow(10,6)):
+x = 0
+for i in range(354295):
     if digFifthPow(i) == i:
-        print(i)
-        l.insert(-1,i)
-print('sum='+str(sum(l)))
+        x += i
+print('sum={}'.format(x))
+print("--------{} ms-----------".format(time.time()-st))
